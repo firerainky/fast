@@ -12,3 +12,13 @@ compose-up:
 
 compose-down:
 	docker compose down -v
+
+logs:
+	docker compose logs -f app
+
+ps:
+	docker compose ps
+
+health:
+	curl http://127.0.0.1:8000/health && echo
+	curl http://127.0.0.1:8000/db/health && echo
